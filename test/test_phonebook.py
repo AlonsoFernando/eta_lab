@@ -8,8 +8,8 @@ class TestPhonebook(unittest.TestCase):
         # setup
         phonebook = Phonebook()
         expected_return = "Nome invalido"
-        name = "#marcello"
-        phone = "123456"
+        name = "#Fernando"
+        phone = "9999999"
         # test
         add_fail = phonebook.add(name, phone)
         # expected
@@ -19,8 +19,8 @@ class TestPhonebook(unittest.TestCase):
         # setup
         phonebook = Phonebook()
         expected_return = "Nome invalido"
-        name = "@marcello"
-        phone = "123456"
+        name = "@Fernando"
+        phone = "9999999"
         # test
         add_fail = phonebook.add(name, phone)
         # expected
@@ -30,8 +30,8 @@ class TestPhonebook(unittest.TestCase):
         # setup
         phonebook = Phonebook()
         expected_return = "Nome invalido"
-        name = "!marcello"
-        phone = "123456"
+        name = "!Fernando"
+        phone = "9999999"
         # test
         add_fail = phonebook.add(name, phone)
         # expected
@@ -41,8 +41,8 @@ class TestPhonebook(unittest.TestCase):
         # setup
         phonebook = Phonebook()
         expected_return = "Nome invalido"
-        name = "$marcello"
-        phone = "123456"
+        name = "$Fernando"
+        phone = "9999999"
         # test
         add_fail = phonebook.add(name, phone)
         # expected
@@ -52,8 +52,8 @@ class TestPhonebook(unittest.TestCase):
         # setup
         phonebook = Phonebook()
         expected_return = "Nome invalido"
-        name = "%marcello"
-        phone = "123456"
+        name = "%Fernando"
+        phone = "9999999"
         # test
         add_fail = phonebook.add(name, phone)
         # expected
@@ -63,7 +63,7 @@ class TestPhonebook(unittest.TestCase):
         # setup
         phonebook = Phonebook()
         expected_return = "Numero invalido"
-        name = "marcello"
+        name = "Fernando"
         phone = ""
         # test
         add_fail = phonebook.add(name, phone)
@@ -74,8 +74,8 @@ class TestPhonebook(unittest.TestCase):
         # setup
         phonebook = Phonebook()
         expected_return = "Numero adicionado"
-        name = "marcello"
-        phone = "123456"
+        name = "Fernando"
+        phone = "9999999"
         # test
         add_success = phonebook.add(name, phone)
         # expected
@@ -84,7 +84,7 @@ class TestPhonebook(unittest.TestCase):
     def test_look_up_with_hashtag(self):
         # setup
         phonebook = Phonebook()
-        name = "#marcello"
+        name = "#Fernando"
         expected_return = "Nome invalido"
         # test
         lookup_fail = phonebook.lookup(name)
@@ -94,7 +94,7 @@ class TestPhonebook(unittest.TestCase):
     def test_look_up_with_arroba(self):
         # setup
         phonebook = Phonebook()
-        name = "@marcello"
+        name = "@Fernando"
         expected_return = "Nome invalido"
         # test
         lookup_fail = phonebook.lookup(name)
@@ -104,7 +104,7 @@ class TestPhonebook(unittest.TestCase):
     def test_look_up_with_exclamation_point(self):
         # setup
         phonebook = Phonebook()
-        name = "!marcello"
+        name = "!Fernando"
         expected_return = "Nome invalido"
         # test
         lookup_fail = phonebook.lookup(name)
@@ -114,7 +114,7 @@ class TestPhonebook(unittest.TestCase):
     def test_look_up_with_cifrao(self):
         # setup
         phonebook = Phonebook()
-        name = "$marcello"
+        name = "$Fernando"
         expected_return = "Nome invalido"
         # test
         lookup_fail = phonebook.lookup(name)
@@ -124,7 +124,7 @@ class TestPhonebook(unittest.TestCase):
     def test_look_up_with_percentage(self):
         # setup
         phonebook = Phonebook()
-        name = "%marcello"
+        name = "%Fernando"
         expected_return = "Nome invalido"
         # test
         lookup_fail = phonebook.lookup(name)
@@ -134,8 +134,8 @@ class TestPhonebook(unittest.TestCase):
     def test_look_up_ok(self):
         # setup
         phonebook = Phonebook()
-        name = "marcello"
-        phone = "123456"
+        name = "Fernando"
+        phone = "9999999"
         expected_return = phone
         # test
         phonebook.add(name, phone)
@@ -183,11 +183,11 @@ class TestPhonebook(unittest.TestCase):
     def test_get_phonebook_sorted(self):
         # setup
         phonebook = Phonebook()
-        name1 = "Marcello"
-        phone1 = "1234"
-        name2 = "Tatu"
-        phone2 = "5667"
-        expected_return = [("Marcello", "1234"), ("POLICIA", "190"), ("Tatu", "5667")]
+        name1 = "Fernando"
+        phone1 = "9999999"
+        name2 = "Batata"
+        phone2 = "8888888"
+        expected_return = [("Batata", "8888888"), ("Fernando", "9999999"), ("POLICIA", "190")]
         # test
         phonebook.add(name1, phone1)
         phonebook.add(name2, phone2)
@@ -198,11 +198,11 @@ class TestPhonebook(unittest.TestCase):
     def test_get_phonebook_reverse(self):
         # setup
         phonebook = Phonebook()
-        name1 = "Marcello"
-        phone1 = "1234"
-        name2 = "Tatu"
-        phone2 = "5667"
-        expected_return = [("Tatu", "5667"), ("POLICIA", "190"), ("Marcello", "1234")]
+        name1 = "Fernando"
+        phone1 = "9999999"
+        name2 = "Batata"
+        phone2 = "8888888"
+        expected_return = [("POLICIA", "190"), ("Fernando", "9999999"), ("Batata", "8888888")]
         # test
         phonebook.add(name1, phone1)
         phonebook.add(name2, phone2)
@@ -224,7 +224,7 @@ class TestPhonebook(unittest.TestCase):
         # setup
         phonebook = Phonebook()
         name = "POLICIA"
-        new_number = "191"
+        new_number = "911"
         expected_return = "Numero modificado"
         # test
         modify_success = phonebook.change_number(name, new_number)
@@ -234,8 +234,8 @@ class TestPhonebook(unittest.TestCase):
     def test_change_number_error(self):
         # setup
         phonebook = Phonebook()
-        name = "POLICIAaa"
-        new_number = "191"
+        name = "POLICE"
+        new_number = "911"
         expected_return = "Nome não encontrado"
         # test
         modify_success = phonebook.change_number(name, new_number)
@@ -255,7 +255,7 @@ class TestPhonebook(unittest.TestCase):
     def test_get_name_by_number_error(self):
         # setup
         phonebook = Phonebook()
-        number = "1910"
+        number = "911"
         expected_return = "Número não encontrado"
         # test
         get_name_by_number_error = phonebook.get_name_by_number(number)
